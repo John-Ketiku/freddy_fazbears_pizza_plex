@@ -1,3 +1,7 @@
+// Created by: John ketiku
+// Created on: sept 2022
+// 
+// this program calculates the cost of pizza slices that you order with taxes.
 scene.setBackgroundImage(img`
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
     3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
@@ -120,7 +124,7 @@ scene.setBackgroundImage(img`
     1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
     `)
-game.splash("Welcome to Freddy_FazBear's_Pizza_Plex ")
+game.splash("Welcome to Freddy FazBear's Pizza Plex! ")
 let Labour = 0.75
 let Rent = 1
 let Pizza_diamerter_cost = 0.5
@@ -247,6 +251,6 @@ scene.setBackgroundImage(img`
     ddddddd55555555555555555555ddddd55555555555555555555555555555555555555ddddddddddddddddddddddddddddde3355dddddddddddddd5d55b3bdddd444bbdddb4ddd4dd3ee3ddddddddddd
     ddddddddd55555555555555555555ddddddddddddddddddddd555555ddddddddddddddddddddddddddddddddddddddddddde33d55d5555dd555d555333b3bddddddd4e33dbbdd4444eeddddddddddddd
     `)
-let Pizza_Diameter = game.askForNumber("How many Pizza Slices would you like?")
-let Pizza_Price = (Math.round(Labour + Rent) + Pizza_diamerter_cost * Pizza_Diameter) * (Ontario_hst * 100) / 100
-game.splash(convertToText(Pizza_Price))
+let Pizza_Diameter = game.askForNumber("How many Pizza Slices would you like to order?")
+let Pizza_Price = Math.round((Labour + Rent + Pizza_diamerter_cost * Pizza_Diameter) * (Ontario_hst * 100) / 100)
+game.splash("Your Pizza costs : $" + convertToText(Pizza_Price))
